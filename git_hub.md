@@ -10,13 +10,6 @@ If already downloaded then use following command to get the latest development v
 git clone https://github.com/git/git
 ```
 
-# Setup username and email ID using following commands
-```bash
-git config --global user.name "Your name here"
-git config --global user.email "your_email@example.com"
-```
-
-
 2. gh installation
 
 Ref link: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
@@ -81,6 +74,11 @@ gh repo clone tejashwar27/CAG_CADSL_README
 
 ## Git setup
 
+### Setup username and email ID using following commands
+```bash
+git config --global user.name "Your name here"
+git config --global user.email "your_email@example.com"
+```
 
 ## Git Usage
 
@@ -99,7 +97,9 @@ git commit -m "Short comment" -m "Long Comment"
 git push -u origin main
 ```
 git add: adds files to the Git index, which is a staging area for objects prepared to be commited.
+
 git commit: commits the files in the index to the repository, git commit -a is a shortcut to add all the modified tracked files to the index first
+
 git push: sends all the pending changes to the remote repository to which your branch is mapped 
 
 ### Pull
