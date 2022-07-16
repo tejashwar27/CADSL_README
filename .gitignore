@@ -35,3 +35,6 @@
 *.aux
 *.blg
 *.log
+
+# KKS VS Code LaTex
+*.synctex.gz
