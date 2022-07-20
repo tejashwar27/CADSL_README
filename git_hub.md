@@ -123,7 +123,9 @@ git diff <file_path>
 
 git diff: to see the differences in the update fetched using git fetch
 
-
+### Undoing changes
+Below is a link with useful commands for different undo scenarios in git.
+https://docs.gitlab.com/ee/topics/git/numerous_undo_possibilities_in_git/
 
 
 
