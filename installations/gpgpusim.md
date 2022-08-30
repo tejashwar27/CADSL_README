@@ -1,7 +1,8 @@
 # 1. Cuda installation #
 * Go to the nvidia website link below: (**Note**: This is for CUDA version 11.0 which is preferable for gpgpusim as of now. However 11.7 is also working which is tested.)
-* https://developer.nvidia.com/cuda-11.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu and select according to your OS version and then click on ***‘deb (local)’*** 
-* After clicking, follow the installation instructions one-by-one (except the last one)
+* https://developer.nvidia.com/cuda-11.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu and select according to your OS version and then click on ***‘deb (local)’***, it will display installer instructions as shown below.
+![alt text](https://github.com/tejashwar27/CADSL_README/blob/6062d1fe7cdc5c897938a746a59521d558074280/installations/cuda_installation_guidelines.png?raw=true) 
+* Now follow the installation instructions one-by-one (except the last one)
 * Then the last instruction is changed as follows: ```sudo apt-get -y install cuda-toolkit-11-0```
 * Add the following lines at the end of your ‘.bashrc’ file
   ```
