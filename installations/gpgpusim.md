@@ -30,7 +30,7 @@ make
 * Copy the samples folder to your home folder to avoid ‘sudo’ every time: ```cp -r /usr/local/cuda/samples ~/```
 * Run some basic examples from the ‘sample’ folder  such as {vector-add,clock} in 0_simple sub-folder and{bandwidth-test} in 1_utilities  and to check whether gpgpu-sim is working or not. (These examples are selected as they have less execution time)
 * Running vector-add example:
-  * source gpgpu-sim_distribution/setup_environment
+  * ```source gpgpu-sim_distribution/setup_environment```
   * Copy the config file of architecture into vector-add folder: ```cp -r ~/gpgpu-sim_distribution/configs/tested-cfgs/SM2_GTX480/* ~/samples/0_Simple/vectorAdd/```
   * **Note**: In the above step always use ‘tested_cfgs’. For power analysis xml file should be there in the architecture folder-eg:SM2_GTX480
   * ```cd samples/0_Simple/vectorAdd```
