@@ -41,6 +41,12 @@ Plug 'tpope/vim-fugitive'
 " gnuplot highlighting
 Plug 'vim-scripts/gnuplot.vim'
 
+Plug '1995parham/vim-spice'
+
+" Git blame plugin
+Plug 'f-person/git-blame.nvim'
+
+
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -69,6 +75,12 @@ hi IndentGuidesEven ctermbg=darkgrey
 " Latex Preview settings
 " let g:livepreview_previewer = 'okular'
 let g:livepreview_cursorhold_recompile = 0
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Git Blame settings
+" By default off
+let g:gitblame_enabled = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""'
 " Search options
@@ -161,4 +173,13 @@ augroup END
 augroup gnuplot_ft
   au!
   autocmd BufNewFile,BufRead *.gnuplot   set syntax=gnuplot
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spice syntax highlighting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup spice_ft
+  au!
+  autocmd BufNewFile,BufRead *.cir   set syntax=spice
+  autocmd BufNewFile,BufRead *nm     set syntax=spice
 augroup END
