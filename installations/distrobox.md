@@ -38,7 +38,7 @@ Refer to following steps for creation of the container, basic usage and testing
 Create a new container:
 --------------
 ```bash
-distrobox create -i ubuntu:16.04 -H /home/tejeshwar/ub16_home -n ub16
+distrobox create -i ubuntu:16.04 -H ~/ub16_home -n ub16
 ```
 It will prompt before downloading the image file. Type 'yes'. Following options are used in the above command:
 1. -i: Input IMAGE
@@ -62,13 +62,21 @@ Enter the container
 --------------
 Enter the container using following:
 ```bash
-distrobox enter ubuntu-16-04
+distrobox enter ub16
 ```
 It should show up on terminal as:
 ```bash
-<user_name>@ubuntu-16-04:~$
+<user_name>@ub16:~$
 ```
 Alias can be setup in the .bashrc file for entering into container
+
+Setup password for the container
+-------------
+You need to set up a new password for the new container. 
+Same password as the host system can be used.
+```bash
+passwd
+```
 
 Check if apt is working
 --------------
