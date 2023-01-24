@@ -38,9 +38,13 @@ Refer to following steps for creation of the container, basic usage and testing
 Create a new container:
 --------------
 ```bash
-distrobox create -i ubuntu:16.04
+distrobox create -i ubuntu:16.04 -H /home/tejeshwar/ub16_home -n ub16
 ```
-It will prompt before downloading the image file. Type 'yes'.
+It will prompt before downloading the image file. Type 'yes'. Following options are used in the above command:
+1. -i: Input IMAGE
+2. -H: Custom home dir for the container
+3. -n: Name of the container
+You can use different name and home directory path
 
 Check the list of containers:
 --------------
@@ -51,8 +55,8 @@ If container is successfully created it should show up in the list.
 
 Example output:
 ```bash
-ID           | NAME                 | STATUS           | IMAGE        
-23f9d3e63225 | ubuntu-16-04         | running          | ubuntu:16.04    
+ID           | NAME         | STATUS           | IMAGE        
+23f9d3e63225 | ub16         | running          | ubuntu:16.04    
 ```
 Enter the container
 --------------
