@@ -13,7 +13,7 @@ Refer to following URL for more info https://github.com/89luca89/distrobox
 # Prerequisites
 Distrobox works with podman or docker. Tested with docker.
 
-Docker installation (Don't use snap package. It creates root related issues later)
+Docker installation (Don't use snap package. It creates root related issues later. Check and uninstall snap docker)
 ```bash
 sudo apt install docker.io
 ```
@@ -44,7 +44,8 @@ It will prompt before downloading the image file. Type 'yes'. Following options 
 1. -i: Input IMAGE
 2. -H: Custom home dir for the container
 3. -n: Name of the container
-You can use different name and home directory path
+You can use different name and home directory path. 
+Use --root option if you get any permission issues.
 
 Check the list of containers:
 --------------
@@ -58,6 +59,8 @@ Example output:
 ID           | NAME         | STATUS           | IMAGE        
 23f9d3e63225 | ub16         | running          | ubuntu:16.04    
 ```
+Initially the status will not be running
+
 Enter the container
 --------------
 Enter the container using following:
@@ -93,6 +96,8 @@ exit
 ```
 Note that this will not stop the container.
 
+# Useful Tips
+
 Check used resources
 -----
 From the host terminal usage of the distrobox containers can be checked using:
@@ -100,4 +105,8 @@ From the host terminal usage of the distrobox containers can be checked using:
 docker system df -v
 ```
 
-
+Root Setup
+-------------
+If you need to pass --root for all distrobox commands then refer to the following
+link to remove the need to pass --root:
+https://docs.docker.com/engine/install/linux-postinstall/
