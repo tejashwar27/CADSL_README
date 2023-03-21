@@ -1,0 +1,24 @@
+make -C analysiscode
+make[1]: Entering directory '/home/krish/Downloads/SimPoint.3.2/analysiscode'
+g++  -Wall -pedantic -pedantic-errors -O3  -c -o CmdLineParser.o CmdLineParser.cpp
+In file included from CmdLineParser.h:88,
+                 from CmdLineParser.cpp:73:
+Utilities.h: In member function ‘int Random::randInt()’:
+Utilities.h:166:59: error: ‘INT_MAX’ was not declared in this scope
+  166 |         inline int randInt() { return (int)(randFloat() * INT_MAX); }
+      |                                                           ^~~~~~~
+Utilities.h:88:1: note: ‘INT_MAX’ is defined in header ‘<climits>’; did you forget to ‘#include <climits>’?
+   87 | #include "Logger.h"
+  +++ |+#include <climits>
+   88 | #include <string>
+CmdLineParser.cpp: In member function ‘bool CmdLineParser::parseCmdLine(int, char**)’:
+CmdLineParser.cpp:81:13: error: ‘strlen’ was not declared in this scope
+   81 |         if (strlen(arg) == 0) {
+      |             ^~~~~~
+CmdLineParser.cpp:74:1: note: ‘strlen’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+   73 | #include "CmdLineParser.h"
+  +++ |+#include <cstring>
+   74 | //#include <cstring>
+make[1]: *** [<builtin>: CmdLineParser.o] Error 1
+make[1]: Leaving directory '/home/krish/Downloads/SimPoint.3.2/analysiscode'
+make: *** [Makefile:4: Simpoint] Error 2

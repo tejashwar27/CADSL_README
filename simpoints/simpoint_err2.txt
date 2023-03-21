@@ -1,0 +1,133 @@
+make -C analysiscode
+make[1]: Entering directory '/home/krish/Downloads/SimPoint.3.2/analysiscode'
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 Utilities.cpp \
+| sed 's/\(Utilities\)\.o[ :]*/\1.o Utilities.d : /g' > Utilities.d; \
+[ -s Utilities.d ] || rm -f Utilities.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 SimpointOptions.cpp \
+| sed 's/\(SimpointOptions\)\.o[ :]*/\1.o SimpointOptions.d : /g' > SimpointOptions.d; \
+[ -s SimpointOptions.d ] || rm -f SimpointOptions.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 Simpoint.cpp \
+| sed 's/\(Simpoint\)\.o[ :]*/\1.o Simpoint.d : /g' > Simpoint.d; \
+[ -s Simpoint.d ] || rm -f Simpoint.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 Logger.cpp \
+| sed 's/\(Logger\)\.o[ :]*/\1.o Logger.d : /g' > Logger.d; \
+[ -s Logger.d ] || rm -f Logger.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 KMeans.cpp \
+| sed 's/\(KMeans\)\.o[ :]*/\1.o KMeans.d : /g' > KMeans.d; \
+[ -s KMeans.d ] || rm -f KMeans.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 FVParser.cpp \
+| sed 's/\(FVParser\)\.o[ :]*/\1.o FVParser.d : /g' > FVParser.d; \
+[ -s FVParser.d ] || rm -f FVParser.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 Dataset.cpp \
+| sed 's/\(Dataset\)\.o[ :]*/\1.o Dataset.d : /g' > Dataset.d; \
+[ -s Dataset.d ] || rm -f Dataset.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 Datapoint.cpp \
+| sed 's/\(Datapoint\)\.o[ :]*/\1.o Datapoint.d : /g' > Datapoint.d; \
+[ -s Datapoint.d ] || rm -f Datapoint.d
+set -e; g++ -MM -Wall -pedantic -pedantic-errors -O3 CmdLineParser.cpp \
+| sed 's/\(CmdLineParser\)\.o[ :]*/\1.o CmdLineParser.d : /g' > CmdLineParser.d; \
+[ -s CmdLineParser.d ] || rm -f CmdLineParser.d
+g++  -Wall -pedantic -pedantic-errors -O3  -c -o CmdLineParser.o CmdLineParser.cpp
+g++  -Wall -pedantic -pedantic-errors -O3  -c -o Datapoint.o Datapoint.cpp
+In file included from Datapoint.cpp:73:
+Datapoint.h:111:20: error: ‘ostream’ has not been declared
+  111 |         void write(ostream &os) const;
+      |                    ^~~~~~~
+Datapoint.h:114:19: error: ‘istream’ has not been declared
+  114 |         void read(istream &is);
+      |                   ^~~~~~~
+Datapoint.h:118:26: error: ‘ostream’ has not been declared
+  118 |         void writeBinary(ostream &os) const;
+      |                          ^~~~~~~
+Datapoint.h:121:25: error: ‘istream’ has not been declared
+  121 |         void readBinary(istream &is);
+      |                         ^~~~~~~
+Datapoint.h:127:1: error: ‘ostream’ does not name a type
+  127 | ostream &operator<<(ostream &os, const Datapoint &dp);
+      | ^~~~~~~
+In file included from Utilities.h:86,
+                 from Datapoint.cpp:74:
+Dataset.h:102:20: error: ‘ostream’ has not been declared
+  102 |         void write(ostream &os) const;
+      |                    ^~~~~~~
+Dataset.h:105:19: error: ‘istream’ has not been declared
+  105 |         void read(istream &is);
+      |                   ^~~~~~~
+Dataset.h:108:26: error: ‘ostream’ has not been declared
+  108 |         void writeBinary(ostream &os) const;
+      |                          ^~~~~~~
+Dataset.h:111:25: error: ‘istream’ has not been declared
+  111 |         void readBinary(istream &is);
+      |                         ^~~~~~~
+Dataset.h:124:1: error: ‘ostream’ does not name a type
+  124 | ostream &operator<<(ostream &os, const Dataset &ds);
+      | ^~~~~~~
+Datapoint.cpp:181:6: error: no declaration matches ‘void Datapoint::write(std::ostream&) const’
+  181 | void Datapoint::write(ostream &os) const {
+      |      ^~~~~~~~~
+In file included from Datapoint.cpp:73:
+Datapoint.h:112:14: note: candidates are: ‘void Datapoint::write(FILE*) const’
+  112 |         void write(FILE *out) const;
+      |              ^~~~~
+Datapoint.h:111:14: note:                 ‘void Datapoint::write(int&) const’
+  111 |         void write(ostream &os) const;
+      |              ^~~~~
+Datapoint.h:89:7: note: ‘class Datapoint’ defined here
+   89 | class Datapoint : public vector<double> {
+      |       ^~~~~~~~~
+Datapoint.cpp:199:6: error: no declaration matches ‘void Datapoint::read(std::istream&)’
+  199 | void Datapoint::read(istream &is) {
+      |      ^~~~~~~~~
+In file included from Datapoint.cpp:73:
+Datapoint.h:115:14: note: candidates are: ‘void Datapoint::read(FILE*)’
+  115 |         void read(FILE *in);
+      |              ^~~~
+Datapoint.h:114:14: note:                 ‘void Datapoint::read(int&)’
+  114 |         void read(istream &is);
+      |              ^~~~
+Datapoint.h:89:7: note: ‘class Datapoint’ defined here
+   89 | class Datapoint : public vector<double> {
+      |       ^~~~~~~~~
+Datapoint.cpp:228:6: error: no declaration matches ‘void Datapoint::writeBinary(std::ostream&) const’
+  228 | void Datapoint::writeBinary(ostream &os) const {
+      |      ^~~~~~~~~
+In file included from Datapoint.cpp:73:
+Datapoint.h:119:14: note: candidates are: ‘void Datapoint::writeBinary(FILE*) const’
+  119 |         void writeBinary(FILE *out) const;
+      |              ^~~~~~~~~~~
+Datapoint.h:118:14: note:                 ‘void Datapoint::writeBinary(int&) const’
+  118 |         void writeBinary(ostream &os) const;
+      |              ^~~~~~~~~~~
+Datapoint.h:89:7: note: ‘class Datapoint’ defined here
+   89 | class Datapoint : public vector<double> {
+      |       ^~~~~~~~~
+Datapoint.cpp:242:6: error: no declaration matches ‘void Datapoint::readBinary(std::istream&)’
+  242 | void Datapoint::readBinary(istream &is) {
+      |      ^~~~~~~~~
+In file included from Datapoint.cpp:73:
+Datapoint.h:122:14: note: candidates are: ‘void Datapoint::readBinary(FILE*)’
+  122 |         void readBinary(FILE *in);
+      |              ^~~~~~~~~~
+Datapoint.h:121:14: note:                 ‘void Datapoint::readBinary(int&)’
+  121 |         void readBinary(istream &is);
+      |              ^~~~~~~~~~
+Datapoint.h:89:7: note: ‘class Datapoint’ defined here
+   89 | class Datapoint : public vector<double> {
+      |       ^~~~~~~~~
+Datapoint.cpp: In member function ‘void Datapoint::read(FILE*)’:
+Datapoint.cpp:215:11: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  215 |     fscanf(in, "%u", &length);
+      |     ~~~~~~^~~~~~~~~~~~~~~~~~~
+Datapoint.cpp:223:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  223 |         fscanf(in, "%lf", &(*this)[i]);
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+Datapoint.cpp: In member function ‘void Datapoint::readBinary(FILE*)’:
+Datapoint.cpp:252:10: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’, declared with attribute warn_unused_result [-Wunused-result]
+  252 |     fread((void *)&length, sizeof(unsigned int), 1, in);
+      |     ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Datapoint.cpp:255:10: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’, declared with attribute warn_unused_result [-Wunused-result]
+  255 |     fread((void *)&(*b), sizeof(double), length, in);
+      |     ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make[1]: *** [<builtin>: Datapoint.o] Error 1
+make[1]: Leaving directory '/home/krish/Downloads/SimPoint.3.2/analysiscode'
+make: *** [Makefile:4: Simpoint] Error 2

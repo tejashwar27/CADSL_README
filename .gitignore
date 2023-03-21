@@ -38,3 +38,6 @@
 
 # KKS VS Code LaTex
 *.synctex.gz
+
+# TEJ Simpoint valgrind dir
+simpoints/valgrind*
