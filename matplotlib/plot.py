@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-import sys, os
+import sys
 
 csv_file = str(sys.argv[1])
 
@@ -45,14 +45,15 @@ print(x_axis)
 # print(X)
 # print(Y)
 
-# plt.rcParams.update({'font.size': 18})
+plt.rcParams.update({'font.size': 15})
+
+fig = plt.figure(figsize=(16, 9))
 
 # Plot the data using bar() method
-plt.bar(x_axis + 0*w, Y1, w, label = l1, edgecolor = 'black')
-plt.bar(x_axis + 1*w, Y2, w, label = l2, edgecolor = 'black')
-plt.bar(x_axis + 2*w, Y3, w, label = l3, edgecolor = 'black')
-plt.bar(x_axis + 3*w, Y4, w, label = l4, edgecolor = 'black')
-#plt.title("innovative companies")
+plt.bar(x_axis + 0*w, Y1, w, label=l1, edgecolor='black')
+plt.bar(x_axis + 1*w, Y2, w, label=l2, edgecolor='black')
+plt.bar(x_axis + 2*w, Y3, w, label=l3, edgecolor='black')
+plt.bar(x_axis + 3*w, Y4, w, label=l4, edgecolor='black')
 
 t = w*(c-1)/2
 
@@ -63,13 +64,14 @@ plt.ylabel("Normalized Performance")
 plt.ylim(1, 1.21)
 
 plt.minorticks_on()
-plt.tick_params(which = "minor", bottom = False)
+plt.tick_params(which="minor", bottom=False)
 
-plt.legend(ncol = c, bbox_to_anchor = (1.0, 1.0), loc = "upper right")
+# plt.legend(ncol=c, bbox_to_anchor=(1.0, 1.0), loc="upper right")
+plt.legend(ncol=c)
 
-plt.grid(which='major', axis = 'y', color='#666666', linestyle='-')
-plt.grid(which='minor', axis = 'y', color='#999999', linestyle='-', alpha = 0.5)
+plt.grid(which='major', axis='y', color='#666666', linestyle='-')
+plt.grid(which='minor', axis='y', color='#999999', linestyle='-', alpha=0.5)
 
-plt.savefig("f1.pdf", edgecolor = "black")
+plt.savefig("f1.pdf", edgecolor="black", bbox_inches="tight")
 # Show the plot
 plt.show()
