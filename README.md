@@ -12,6 +12,7 @@ Computer Architecture Group, CADSL, IIT Bombay.
 | 5 |gem5.md               | GEM5 Older version installation |
 | 6 |gpgpusim              | GPGPU SIM  installation |
 | 7 |distrobox.md          | Docker wrapper setup |
+| 8 |matplotlib            | Python Script for plotting bar graph from CSV |
 
 ## List of Simulator Repos
 
