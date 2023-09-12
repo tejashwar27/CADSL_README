@@ -1,0 +1,78 @@
+# Python script for creating bar plot from CSV
+
+# Required packages can be installed using following command
+# pip install pandas
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+import sys
+
+csv_file = str(sys.argv[1])
+
+c = 4
+w = 3  # linewidth
+
+# Reading CSV file
+data = pd.read_csv(csv_file)
+
+df = pd.DataFrame(data)
+
+print(df)
+
+X = list(df.iloc[2:27, 0])
+Y1 = [float(y) for y in list(df.iloc[2:27, 7])]
+Y2 = [float(y) for y in list(df.iloc[2:27, 8])]
+Y3 = [float(y) for y in list(df.iloc[2:27, 9])]
+Y4 = [float(y) for y in list(df.iloc[2:27, 10])]
+
+l1 = df.iloc[0, 7]
+l2 = df.iloc[0, 8]
+l3 = df.iloc[0, 9]
+l4 = df.iloc[0, 10]
+
+print(l1)
+print(l2)
+print(l3)
+print(l4)
+
+
+x_axis = np.arange(len(X))
+
+print(x_axis)
+
+# print(X)
+# print(Y)
+
+plt.rcParams.update({'font.size': 15})
+
+fig = plt.figure(figsize=(16, 9))
+
+# Plot the data using bar() method
+plt.plot(x_axis, Y1, label=l1, linewidth=w, marker="D", mfc="black", mec="black", ms=7)
+plt.plot(x_axis, Y2, label=l2, linewidth=w, marker="D", mfc="black", mec="black", ms=7)
+plt.plot(x_axis, Y3, label=l3, linewidth=w, marker="D", mfc="black", mec="black", ms=7)
+plt.plot(x_axis, Y4, label=l4, linewidth=w, marker="D", mfc="black", mec="black", ms=7)
+
+t = w*(c-1)/2
+
+# plt.xticks(x_axis + t, X, rotation=45, ha='center')
+plt.xticks(x_axis, [])  # For ticks without x-axis labels
+plt.xlabel("Server Traces")
+
+plt.ylabel("Normalized Performance")
+plt.ylim(1, 1.21)
+
+plt.minorticks_on()
+plt.tick_params(which="minor", bottom=False)
+
+# plt.legend(ncol=c, bbox_to_anchor=(1.0, 1.0), loc="upper right")
+plt.legend(ncol=c)
+
+plt.grid(which='major', axis='y', color='#666666', linestyle='-')
+plt.grid(which='minor', axis='y', color='#999999', linestyle='-', alpha=0.5)
+
+plt.savefig("line_f1.pdf", edgecolor="black", bbox_inches="tight")
+# Show the plot
+plt.show()

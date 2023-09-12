@@ -58,7 +58,8 @@ plt.bar(x_axis + 3*w, Y4, w, label=l4, edgecolor='black')
 t = w*(c-1)/2
 
 plt.xticks(x_axis + t, X, rotation=45, ha='center')
-plt.xlabel("Application")
+# plt.xticks(x_axis + t, [])  # For ticks without x-axis labels
+plt.xlabel("Server Traces")
 
 plt.ylabel("Normalized Performance")
 plt.ylim(1, 1.21)
