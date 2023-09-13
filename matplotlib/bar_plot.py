@@ -4,7 +4,7 @@
 # pip install pandas
 
 # How to run??
-# python3 <path_to_csv> <no_of_bars> <first_data> <output_pdf>
+# python3 arguments
 
 # Assumptions:
 # X-axis is first column in the CSV file.
@@ -25,6 +25,11 @@ w = 0.8/c
 first = int(sys.argv[3])
 
 outpdf = str(sys.argv[4])
+
+llim = float(sys.argv[5])
+hlim = float(sys.argv[6])
+
+yaxis = str(sys.argv[7])
 
 # Reading CSV file
 data = pd.read_csv(csv_file)
@@ -63,8 +68,9 @@ plt.xticks(x_axis + t, X, rotation=45, ha='center')
 # plt.xticks(x_axis + t, [])  # For ticks without x-axis labels
 plt.xlabel("Server Traces")
 
-plt.ylabel("Normalized Performance")
-plt.ylim(1, 1.21)
+plt.ylabel(yaxis)
+
+plt.ylim(llim, hlim)
 
 plt.minorticks_on()
 plt.tick_params(which="minor", bottom=False)
