@@ -127,3 +127,11 @@ git diff: to see the differences in the update fetched using git fetch
 ### Undoing changes
 Below is a link with useful commands for different undo scenarios in git.
 https://docs.gitlab.com/ee/topics/git/numerous_undo_possibilities_in_git/
+
+## Create mirror repos
+Mentioning below the commands used for creating multiple clones for future reference
+1) git clone --bare --single-branch --branch=reference git@github.com:tejashwar27/CADSL_Piyush_Gem5_Fault_Tolerant.git
+2) cd CADSL_Piyush_Gem5_Fault_Tolerant.git/
+3) git branch -m reference main
+4) git push --mirror git@github.com:geek-dude/EE_748_23_Team_1.git
+Steps 1 to 3 are performed only once and step 4 is repeated 10 more times to push to the remaining 10 repos.
